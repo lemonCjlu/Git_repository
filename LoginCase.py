@@ -3,6 +3,7 @@ import time
 from appium import webdriver
 import  unittest
 import  HTMLTestRunner
+import time
 
 
 class TestLogin(unittest.TestCase):
@@ -32,7 +33,9 @@ class TestLogin(unittest.TestCase):
 
 
     def test_login(self):
-        self.driver.find_element_by_id("com.strong.leke.student:id/login_username").send_keys('187340')
+        login =self.driver.find_element_by_id("com.strong.leke.student:id/login_username")
+        time.sleep(50)
+        login.send_keys('187340')
         # 输入密码
         self.driver.find_element_by_id("com.strong.leke.student:id/login_password").send_keys('123456aa')
         # 点击登录
